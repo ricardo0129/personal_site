@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "name": "portfolio",
+      "images": [],
+      "year": 2025,
+      "demoUrl": "https://ricky-ruiz.com",
+      "content": [
+          "Built this portfolio website using react & tailwindjs. The design is inspired by the work of [Adham Dannaway](https://www.adhamdannaway.com/).",
+      ],
+      "technologies": [
+          "react",
+          "tailwindcss",
+          "typescript"
+      ]
+    }
+}
