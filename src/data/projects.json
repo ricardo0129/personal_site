@@ -1,12 +1,13 @@
 {
   "data": [
     {
-      "name": "portfolio",
-      "images": [],
+      "name": "Portfolio",
       "year": 2025,
       "demoUrl": "https://ricky-ruiz.com",
       "content": [
-          "Built this portfolio website using react & tailwindjs. The design is inspired by the work of [Arthur Wallendorff](https://wallenart.dev/)",
+          {"type": "text", "content": "Built this portfolio website using react & tailwindjs. The design is inspired by the work of [Arthur Wallendorff](https://wallenart.dev/)"},
+          {"type": "image", "content": "/images/projects/portfolio.png"},
+          {"type": "text", "content": "The website is fully responsive and works on all devices. It also has a dark mode feature."}
       ],
       "technologies": [
           "react",
@@ -14,4 +15,5 @@
           "typescript"
       ]
     }
+  ]
 }

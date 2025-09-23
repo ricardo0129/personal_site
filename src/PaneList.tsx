@@ -22,7 +22,7 @@ export default function PaneList({
       onClick={() => onPaneClick?.(title)}
     >
       {/* Header that cuts the border */}
-      <span className="absolute -top-[11px] left-3 bg-terminal font-mono text-white">
+      <span className="absolute -top-[11px] -left-1 bg-terminal font-mono text-white">
         {title}
       </span>
 
