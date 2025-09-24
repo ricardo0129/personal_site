@@ -1,5 +1,5 @@
 import React from "react";
-import { colorizeText } from "./utils/utils.tsx";
+import { colorizeText } from "../utils/utils.tsx";
 
 interface PaneListProps {
   title: string; // Header for the list

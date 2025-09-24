@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import PaneList from "./PaneList";
-import ProjectView from "./ProjectView";
+import PaneView from "./views/PaneView";
+import ProjectView from "./views/ProjectView";
 import { colorizeText } from "./utils/utils.tsx";
 
 export default function App() {
@@ -39,7 +39,7 @@ export default function App() {
         <div className="flex flex-col space-y-4 w-1/4">
           <div className="flex-1 border-gray-600 p-2 space-y-4">
             {Object.keys(panes).map((key, idx) => (
-              <PaneList
+              <PaneView
                 key={key}
                 title={key}
                 items={panes[key]}
@@ -57,7 +57,7 @@ export default function App() {
           <ProjectView
             name={mainContent["name"]}
             year={mainContent["year"]}
-            demoUrl={mainContent["demoUrl"]}
+            demoUrl={mainContent["url"]}
             content={mainContent["content"]}
             technologies={mainContent["technologies"]}
           />

@@ -1,10 +1,10 @@
 import React from "react";
-import { colorizeText } from "./utils/utils.tsx";
+import { colorizeText } from "../utils/utils.tsx";
 
 interface ProjectViewProps {
   name: string;
   year: string;
-  demoUrl: string;
+  url: string;
   content: { type: "text" | "image"; content: string }[];
   technologies: string[];
 }
@@ -12,7 +12,7 @@ interface ProjectViewProps {
 export default function ProjectView({
   name,
   year,
-  demoUrl,
+  url,
   content,
   technologies,
 }: ProjectViewProps) {
@@ -30,12 +30,12 @@ export default function ProjectView({
         </div>
         <div>
           <a
-            href={demoUrl}
+            href={url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-xl text-white border border-white px-16 py-2 square hover:bg-blue-500 transition"
           >
-            Demo
+            Github
           </a>
         </div>
       </div>
