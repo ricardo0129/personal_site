@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-terminal text-accent font-mono;
+  @apply bg-slate-950 text-white font-mono;
 }

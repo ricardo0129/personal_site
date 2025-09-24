@@ -1,4 +1,5 @@
 import React from "react";
+import { colorizeText } from "./utils/utils.tsx";
 
 interface PaneListProps {
   title: string; // Header for the list
@@ -22,7 +23,7 @@ export default function PaneList({
       onClick={() => onPaneClick?.(title)}
     >
       {/* Header that cuts the border */}
-      <span className="absolute -top-[11px] -left-1 bg-terminal font-mono text-white">
+      <span className="absolute -top-[11px] -left-1 bg-slate-950 font-mono text-white">
         {title}
       </span>
 
@@ -33,10 +34,12 @@ export default function PaneList({
             key={item}
             onClick={() => onSelect?.(item)}
             className={`p-2 cursor-pointer square ${
-              activeItem === item ? "bg-gray-800 text-white" : "text-white"
+              activeItem === item && items.length > 1
+                ? "bg-gray-800 text-white"
+                : "text-white"
             }`}
           >
-            {item}
+            {colorizeText(item)}
           </div>
         ))}
       </div>
