@@ -11,7 +11,7 @@ export default function App() {
   const [mainContent, setMainContent] = useState("[{}]");
 
   const footer =
-    "<pgup>/<pgdown>: Scroll, <left>/<right>: Switch section, <1-5>: Jump to section, <up>/<down>: Switch item {{(or just use the mouse)}}";
+    "{{<pgup>/<pgdown>: Scroll, <left>/<right>: Switch section, <1-5>: Jump to section, <up>/<down>: Switch item}} {{(or just use the mouse)}}";
 
   useEffect(() => {
     fetch("src/data/about.json").then((res) => {

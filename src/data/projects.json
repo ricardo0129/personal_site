@@ -2,7 +2,7 @@
   "data": [
     {
       "name": "Portfolio",
-      "year": 2025,
+      "year": "{{2025}}",
       "demoUrl": "https://ricky-ruiz.com",
       "content": [
           {"type": "text", "content": "Built this portfolio website using react & tailwindjs. The design is inspired by the work of [Arthur Wallendorff](https://wallenart.dev/)"},

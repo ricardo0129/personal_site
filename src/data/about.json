@@ -2,8 +2,6 @@
   "About": ["Hey, I'm {{Ricardo}}! A software engineer who enjoys {{problem solving}} and learning. Been coding for a while now... and still loving it!"],
   "Experience": ["Software Engineer @ {{C1}}", "Graduate Research Assistant @ {{FIU}}"],
   "Projects": ["Embedded Programming"],
-  "Contact": ["ruizr274@gmail.com\ngithub.com/ricardo0129"],
-  "Resume": ["https://resume.ricardouriz.dev"],
   "Socials": [
       "Gihub",
       "LinkedIn",

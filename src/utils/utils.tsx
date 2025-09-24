@@ -16,6 +16,7 @@ function randomColor(text: string): string {
 }
 
 export function colorizeText(text: string): JSX.Element {
+  if (!text) return <></>;
   const parts = text.split(/({{|}})/); // split on markers
   let open = false;
 
