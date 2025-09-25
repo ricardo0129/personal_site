@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import PaneView from "./views/PaneView";
 import ProjectView from "./views/ProjectView";
 import { colorizeText } from "./utils/utils.tsx";
+import StatsView from "./views/StatsView.tsx";
 
+const SECTION_KEYS = ["about", "experience", "projects", "stats", "blog"];
 export default function App() {
   const [active, setActive] = useState("about");
   const [panes, setPanes] = useState({});
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const [mainPage, setMainPage] = useState("about");
   const [mainContent, setMainContent] = useState("[{}]");
+  const [contentType, setContentType] = useState(SECTION_KEYS[0]);
 
   const footer =
     "{{<pgup>/<pgdown>: Scroll, <left>/<right>: Switch section, <1-5>: Jump to section, <up>/<down>: Switch item}} {{(or just use the mouse)}}";
@@ -21,7 +24,6 @@ export default function App() {
     });
     fetch("src/data/projects.json").then((res) => {
       res.json().then((data) => {
-        console.log(data["data"][0]);
         setMainContent(data["data"][0]);
       });
     });
@@ -30,6 +32,24 @@ export default function App() {
   function paneClick(content, idx) {
     setHighlightedIndex(idx);
     setMainPage(content);
+    setContentType(SECTION_KEYS[idx]);
+  }
+
+  function contentWrapper(content) {
+    if (contentType == "projects") {
+      return (
+        <ProjectView
+          name={mainContent["name"]}
+          year={mainContent["year"]}
+          demoUrl={mainContent["url"]}
+          content={mainContent["content"]}
+          technologies={mainContent["technologies"]}
+        />
+      );
+    } else if (contentType == "stats") {
+      return <StatsView stats={["100", "200", "50", "30", "200"]} />;
+    }
+    return null;
   }
 
   return (
@@ -54,13 +74,7 @@ export default function App() {
 
         {/* Content */}
         <div className="flex-1 border square border-white-600 m-2 p-4 whitespace-pre-wrap">
-          <ProjectView
-            name={mainContent["name"]}
-            year={mainContent["year"]}
-            demoUrl={mainContent["url"]}
-            content={mainContent["content"]}
-            technologies={mainContent["technologies"]}
-          />
+          {contentWrapper(mainContent)}
         </div>
       </div>
 
